@@ -29,15 +29,6 @@ pipeline {
 			}
 		}
 
-		stage('Set Current kubectl Context') {
-			steps {
-				withAWS(region:'us-east-1', credentials:'aws_credentials') {
-					sh '''
-						kubectl config use-context arn:aws:eks:us-east-1:047033459652:cluster/udacitycluster
-					'''
-				}
-			}
-		}
 
 		stage('Deploy Blue Container') {
 			steps {

@@ -9,6 +9,7 @@ pipeline {
 						eksctl create cluster \
 						--name udacitycluster \
 						--version 1.21 \
+						--managed=false
 						--nodegroup-name standard-workers \
 						--node-type t2.small \
 						--nodes 2 \

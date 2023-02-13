@@ -51,9 +51,3 @@ This is main html file of application.
 
 This file contains the steps of CICD pipeline of application.
 
-## Project Setup
-
--   Create Jenkins server using cloud formation template.
-
-```
-$ sh scripts/create.sh jenkins-stack infrastructure/jenkins-server.yml infrastructure/jenkins-server-parameters.json

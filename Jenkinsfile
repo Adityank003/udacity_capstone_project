@@ -7,6 +7,14 @@ pipeline {
 				sh 'tidy -q -e *.html'
 			}
 		}
+		stage('Lint Dockerfile') {
+            		agent {
+                		docker { image 'hadolint/hadolint' }
+            		}
+            		steps {
+                		sh 'hadolint Dockerfile'
+            		}
+       		 }
 		
 		stage('Build Docker Image') {
 			steps {

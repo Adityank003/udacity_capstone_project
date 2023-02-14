@@ -8,14 +8,9 @@ pipeline {
 			}
 		}
 		stage('Lint Dockerfile') {
-            		agent {
-                		docker { 
-					image 'hadolint/hadolint:latest-debian'
-					}
-            		}
             		steps {
-                		sh 'hadolint Dockerfile'
-            		}
+				sh 'tidy -q -e *.html'
+			}
        		 }
 		
 		stage('Build Docker Image') {
